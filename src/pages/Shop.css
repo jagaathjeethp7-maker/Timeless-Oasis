@@ -1,0 +1,244 @@
+.shop__header {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.shop__header-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.shop__header-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shop__header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,18,12,0.75) 0%, rgba(26,18,12,0.2) 70%);
+}
+
+.shop__header-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 3rem;
+  color: #fff;
+}
+
+.shop__eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 0.8rem;
+}
+
+.shop__header-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.shop__header-content p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+
+.shop__body {
+  padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+.shop__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.shop__search {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.65rem 1rem;
+  color: var(--text-muted);
+}
+
+.shop__search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: "Jost", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.shop__search input::placeholder {
+  color: var(--text-muted);
+}
+
+.shop__search button {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.shop__search button:hover {
+  color: var(--accent);
+}
+
+.shop__results {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.shop__filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 0.65rem 1.2rem;
+  border-radius: 2px;
+  background: var(--bg-card);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.shop__filter-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.shop__filters {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.shop__filters-inner {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.shop__filter-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.shop__filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.shop__pill {
+  font-size: 0.82rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  transition: all 0.25s ease;
+  font-family: "Jost", sans-serif;
+}
+
+.shop__pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.shop__pill--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.shop__cat-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.shop__cat-btn {
+  font-size: 0.82rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  color: var(--text-secondary);
+  font-family: "Jost", sans-serif;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.shop__cat-btn:hover {
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+.shop__cat-btn--active {
+  color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 500;
+}
+
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.shop__empty {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--text-muted);
+}
+
+.shop__empty p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .shop__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .shop__grid {
+    grid-template-columns: 1fr;
+  }
+  .shop__header {
+    height: 280px;
+  }
+}

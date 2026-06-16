@@ -88,6 +88,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured Products — right after hero so visitors see them first */}
+      {featured.length > 0 && (
+        <section className="home-featured">
+          <div className="container">
+            <motion.div
+              className="section-header"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="section-title">Featured Finds</h2>
+              <p className="section-subtitle">Our most-loved pieces, handpicked for you</p>
+            </motion.div>
+            <div className="home-featured__grid">
+              {featured.map((product, i) => (
+                <ProductCard key={product.id} product={product} index={i} />
+              ))}
+            </div>
+            <motion.div
+              className="home-featured__cta"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Link to="/shop" className="btn-outline">
+                View All Products <ArrowRight size={16} />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Categories */}
       <section className="home-categories">
         <div className="container">
@@ -122,40 +156,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Featured Products — only shown if there are featured products */}
-      {featured.length > 0 && (
-        <section className="home-featured">
-          <div className="container">
-            <motion.div
-              className="section-header"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="section-title">Featured Finds</h2>
-              <p className="section-subtitle">Our most-loved pieces, handpicked for you</p>
-            </motion.div>
-            <div className="home-featured__grid">
-              {featured.map((product, i) => (
-                <ProductCard key={product.id} product={product} index={i} />
-              ))}
-            </div>
-            <motion.div
-              className="home-featured__cta"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Link to="/shop" className="btn-outline">
-                View All Products <ArrowRight size={16} />
-              </Link>
-            </motion.div>
-          </div>
-        </section>
-      )}
 
       {/* Banner */}
       <section className="home-banner">

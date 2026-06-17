@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { SlidersHorizontal, X, Search } from "lucide-react";
-import { products, categories, styles } from "../data/products";
+import { SlidersHorizontal, X, Search, ExternalLink } from "lucide-react";
+import { products, categories, styles, beyondTheHome } from "../data/products";
 import ProductCard from "../components/ProductCard";
 import "./Shop.css";
 
@@ -165,6 +165,56 @@ export default function Shop() {
             </button>
           </div>
         )}
+      </div>
+
+      {/* Beyond the Home Section */}
+      <div className="beyond">
+        <div className="container">
+          <motion.div
+            className="beyond__header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="beyond__eyebrow">Lifestyle Picks</p>
+            <h2 className="beyond__title">Beyond the Home</h2>
+            <p className="beyond__subtitle">
+              Carefully selected lifestyle essentials that complement the way you live — beyond your four walls.
+            </p>
+          </motion.div>
+
+          <div className="beyond__grid">
+            {beyondTheHome.map((item, i) => (
+              <motion.div
+                key={item.id}
+                className="beyond__card"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
+              >
+                <div className="beyond__card-image">
+                  <img src={item.image} alt={item.name} />
+                  <span className="beyond__tag">{item.tag}</span>
+                </div>
+                <div className="beyond__card-body">
+                  <h3 className="beyond__card-name">{item.name}</h3>
+                  <p className="beyond__card-desc">{item.description}</p>
+                  <a
+                    href={item.buyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="beyond__card-btn"
+                  >
+                    Shop Now <ExternalLink size={14} />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

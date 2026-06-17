@@ -143,6 +143,33 @@ export const products = [
   },
 ];
 
+export const beyondTheHome = [
+  {
+    id: "b1",
+    name: "Safari Genius Alley Trolley Bags — Set of 3",
+    description: "A sleek set of three hard-case polypropylene trolley bags with smooth 360-degree wheels. Built for effortless travel in timeless black.",
+    image: "https://m.media-amazon.com/images/I/61SLDuHxNVL._SL1500_.jpg",
+    buyLink: "https://amzn.to/4ev2jq0",
+    tag: "Travel",
+  },
+  {
+    id: "b2",
+    name: "Dark Knight Laptop Backpack",
+    description: "A premium polyester and PU leather backpack with a bold Dark Knight design — stylish, durable, and perfect for work, travel, or college.",
+    image: "https://m.media-amazon.com/images/I/71NRzYIdihL._SX679_.jpg",
+    buyLink: "https://amzn.to/4vVFfYJ",
+    tag: "Lifestyle",
+  },
+  {
+    id: "b3",
+    name: "BULLAR Steel Home Gym Set",
+    description: "A complete home gym kit with a straight rod, curl bar, and steel weight plates — everything you need to build strength and stay fit at home.",
+    image: "https://m.media-amazon.com/images/I/81C7jt5zTML._SL1500_.jpg",
+    buyLink: "https://amzn.to/4esexzA",
+    tag: "Fitness",
+  },
+];
+
 export const testimonials = [
   {
     id: 1,

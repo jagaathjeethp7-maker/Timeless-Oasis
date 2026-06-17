@@ -228,8 +228,137 @@
   margin-bottom: 1.5rem;
 }
 
+/* ── Beyond the Home ── */
+.beyond {
+  background: var(--bg-secondary);
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.beyond__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.beyond__eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.beyond__title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.beyond__subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.beyond__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.beyond__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.beyond__card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+.beyond__card-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.beyond__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.beyond__card:hover .beyond__card-image img {
+  transform: scale(1.05);
+}
+
+.beyond__tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+}
+
+.beyond__card-body {
+  padding: 1.5rem;
+}
+
+.beyond__card-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.beyond__card-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.beyond__card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.55rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.25s ease, color 0.25s ease;
+  text-decoration: none;
+}
+
+.beyond__card-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 @media (max-width: 1024px) {
   .shop__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .beyond__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -240,5 +369,8 @@
   }
   .shop__header {
     height: 280px;
+  }
+  .beyond__grid {
+    grid-template-columns: 1fr;
   }
 }
